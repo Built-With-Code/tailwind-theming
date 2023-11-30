@@ -2,26 +2,40 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-}
-
-@media (prefers-color-scheme: dark) {
+@layer base {
   :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+    --color-primary: hsl(0, 0%, 0%);
+    --color-secondary: hsl(0, 0%, 50%);
+    --color-text-base: hsl(0, 0%, 100%);
+    --color-bg-primary: hsl(0, 0%, 100%);
+  }
+
+  * {
+    @apply transition-colors duration-500 ease-in-out;
   }
 }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+.theme-black {
+  --color-primary: hsl(0, 0%, 0%);
+  --color-secondary: hsl(0, 0%, 50%);
+}
+
+.theme-orange {
+  --color-primary: hsl(25, 100%, 50%);
+  --color-secondary: hsl(25, 100%, 65%);
+}
+
+.theme-purple {
+  --color-primary: hsl(270, 100%, 50%);
+  --color-secondary: hsl(270, 100%, 75%);
+}
+
+.theme-green {
+  --color-primary: hsl(120, 100%, 35%);
+  --color-secondary: hsl(120, 100%, 45%);
+}
+
+.theme-blue {
+  --color-primary: hsl(220, 100%, 50%);
+  --color-secondary: hsl(220, 100%, 75%);
 }
